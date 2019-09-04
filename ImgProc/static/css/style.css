@@ -1,0 +1,124 @@
+        .body{
+            margin-left:10em;
+            display:grid;
+            grid-template: "h t m" 5em
+                           "n t m" 9em
+                           "s t m" 2em
+                           "c t m" 10em
+                           "s1 t m" 8em
+                           "s1 t m" 30em
+                           "p f f" 3em/ 15em 1em 57em;
+            height:100vh;
+            background:#eeeeee;
+            color:#222222;
+        }
+        .title{
+            font-size:1.8em;
+            font-weight: bold
+        }
+        .link{
+            text-decoration: none;
+
+        }
+        .text_emp{
+            font-size: 1.5em;
+        }
+        .text_center{
+            text-align: center;
+        }
+        .line{
+            height:1px;
+            border:none;
+            border-top:1px solid #555555;
+        }
+        header{
+            grid-area:h;
+            background:#222222;
+            color:#ffffff;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+        }
+        main{
+            grid-area: m;
+            background:#ffffff;
+            word-wrap:break-word;
+            word-break:break-all;
+            overflow: hidden;
+            padding-left:2.5em;
+            padding-right:2.5em;
+            padding-top:0.5em;
+            font-size:0.9em;
+            font-family: "Century";
+        }
+        aside{
+            grid-area: a;
+            background:#ffffff;
+        }
+        contact{
+            grid-area:c;
+            background:#ffffff;
+            text-align: center;
+        }
+        navigation{
+            grid-area:n;
+            background:#ffffff;
+            text-align: center;
+            color:#222222;
+            line-height: 25px;
+            border-style:solid;
+            border-width:3px;
+            border-color:#222222;
+        }
+        footer{
+            grid-area: f;
+            background:#eeeeee;
+            text-align:center;
+        }
+        intro{
+            grid-area: h1;
+            background:#ffffff;
+            padding-left:2.5em;
+            padding-right:2.5em;
+            padding-top:1.5em;
+            word-wrap:break-word;
+            word-break:break-all;
+            overflow: hidden;
+            font-size: 0.9em;
+            font-family:"Century","Times New Roman";
+        }
+        .info{
+            border-style:solid;
+            border-width: 2px;
+            border-color:#aaaaaa;
+        }
+        .block{
+            border-style:solid;
+            border-width:2px;
+            border-color:#aaaaaa;
+            text-indent:1.5em;
+            line-height: 0.9em;
+            padding-bottom: 1.2em;
+            margin-top:1.5em;
+        }
+        .link{
+            text-decoration: none;
+            color:#222222;
+        }
+        .time{
+            line-height: 0;
+            color:#2f2f2f;
+        }
+        .text{
+            line-height: 1.3em;
+            color:#222222;
+            font-size: 1.1em;
+            padding-left:2em;
+            padding-right:2em;
+            padding-top:1em;
+            letter-spacing: 0.1ex
+        }
+        .floatimg{
+            margin-right: 0px;
+            position:relationship
+        }

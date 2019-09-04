@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImgProcess</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body class="body">
+    <header>
+        IMP
+    </header>
+    <main>
+        <p align="center" class="title">Welcome to IMP!</p>
+        <hr class="line" />
+        <div class="block">
+            <p class="text">
+                Our website provide image processing API, which can be use to identify faces, classify images, etc.
+            </p>
+            <p class="text">
+                To use our API, please first regist an account. If you have an account, please login and upload your
+                image. Then the processed image will be send back.
+            </p>
+        </div>
+        <div class="block">
+            <p class="text_center text_emp">
+                Regist
+            </p>
+            <form action="/regist/" method="post">
+                <div class="text_center">
+                    Username
+                    <input type="text" name="username">
+                </div>
+                <p>
+
+                </p>
+                <div class="text_center">
+                    Password&nbsp;
+                    <input type="password" name="password">
+                </div>
+                <p></p>
+                <div class="text_center">
+                    <input type="submit" name="submit">
+                </div>
+            </form>
+        </div>
+        <div class="block">
+            <p class="text_center text_emp">
+                Login
+            </p>
+            <form action="/login/" method="post">
+                <div class="text_center">
+                    Username
+                    <input type="text" name="username">
+                </div>
+                <p>
+
+                </p>
+                <div class="text_center">
+                    Password&nbsp;
+                    <input type="password" name="password">
+                </div>
+                <p></p>
+                <div class="text_center">
+                    <input type="submit" name="submit">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

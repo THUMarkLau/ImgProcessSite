@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <meta charset="UTF-8">
+    <title>{{ T }}</title>
+</head>
+<body class="body">
+    <header>
+        {{ header }}
+    </header>
+    <navigation>
+        <p>
+            <a href="/index/" class="link">Index</a>
+        </p>
+    </navigation>
+    <main>
+    <p align="center" class="title">
+        {{ title }}
+    </p>
+    <hr class="line" />
+        {% for p in paras %}
+        <div class="block">
+            <p align="center" class="text">
+                {{ p }}
+            </p>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>

@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import ImgProc.views as iv
 
 urlpatterns = [
+    path('index/', iv.index),
+    path('regist/', iv.regist),
     path('admin/', admin.site.urls),
 ]
