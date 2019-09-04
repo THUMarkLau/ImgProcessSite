@@ -20,5 +20,8 @@ import ImgProc.views as iv
 urlpatterns = [
     path('index/', iv.index),
     path('regist/', iv.regist),
+    path('login/', iv.login),
+    path('user/', iv.userMainPage),
+    path('uploadImg/', iv.processImg),
     path('admin/', admin.site.urls),
 ]

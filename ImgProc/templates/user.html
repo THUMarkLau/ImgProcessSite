@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <meta charset="UTF-8">
+    <title>ImageProcess</title>
+</head>
+<body class="body">
+    <header>
+        Welcome, {{ username }}!
+    </header>
+    <navigation>
+
+    </navigation>
+    <main>
+        <p align="center" class="title">Welcome to IMP!</p>
+        <hr class="line" />
+        <div class="block">
+            <p class="text">
+                Welcome, {{ username }}! Now you can upload an image to
+                process!
+            </p>
+        </div>
+        <div class="block">
+            <form  class="container" enctype="multipart/form-data" method="post" action="/uploadImg/" >
+                <p align="center">
+                    <input type="file" name="img">
+                </p>
+                <p align="center">
+                    <input type="submit" name="submit" value="submit">
+                </p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

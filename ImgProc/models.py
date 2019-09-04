@@ -12,6 +12,7 @@ class User(models.Model):
     '''
     username = models.CharField(max_length=64)
     password = models.CharField(max_length=64)
+    cookie = models.CharField(max_length=100, default='')
 
     def __str__(self):
         return '''username = %s 
