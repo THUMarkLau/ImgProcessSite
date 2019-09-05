@@ -18,10 +18,12 @@ from django.urls import path
 import ImgProc.views as iv
 
 urlpatterns = [
+    path('', iv.index),
     path('index/', iv.index),
     path('regist/', iv.regist),
     path('login/', iv.login),
     path('user/', iv.userMainPage),
+    path('logout/', iv.logout),
     path('uploadImg/', iv.processImg),
     path('admin/', admin.site.urls),
 ]

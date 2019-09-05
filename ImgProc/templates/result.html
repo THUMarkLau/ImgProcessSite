@@ -29,35 +29,20 @@
         <hr class="line" />
         <div class="block">
             <p class="text">
-                Welcome, {{ username }}! Now you can upload an image to
-                process!
+                Process Finish!
             </p>
         </div>
         <div class="block">
             <p align="center" class="text_emp">
-                Upload Image File
+                Source Image
             </p>
-            <form  class="container" enctype="multipart/form-data" method="post" action="/uploadImg/" >
-                <p align="center">
-                    <input type="file" name="img" value="Choose an img">
-                </p>
-                <p align="center">
-                    <input type="submit" name="submit" value="submit">
-                </p>
-            </form>
+
         </div>
         <div class="block">
             <p align="center" class="text_emp">
-                Upload By URL
+                Result Image
             </p>
-            <form class="container" enctype="multipart/form-data" method="post" action="/uploadImg/">
-                <p align="center">
-                    <input type="url" name="link">
-                </p>
-                <p align="center">
-                    <input type="submit" name="submit">
-                </p>
-            </form>
+
         </div>
     </main>
 </body>

@@ -4,12 +4,19 @@ from . import utils
 import hashlib
 import pdb
 import numpy as np
+import io
+import requests
 
 # Create your views here.
 
 def index(request):
     '''访问主界面，返回主界面网页'''
-    return render(request, 'index.html')
+    try:
+        cookie = request.COOKIES['id']
+        user = models.User.objects.get(cookie=cookie)
+        return userMainPage(request)
+    except:
+        return render(request, 'index.html')
 
 def regist(request):
     '''注册系统，密码不得少于5位，用户名不得重复'''
@@ -89,6 +96,16 @@ def login(request):
             ]
         })
 
+def logout(request):
+    try:
+        cookie = request.COOKIES['id']
+        user = models.User.objects.get(cookie=cookie)
+        user.cookie = ''
+        user.save()
+    except:
+        pass
+    return redirect(index)
+
 def userMainPage(request):
     '''用户主页'''
     try:
@@ -103,8 +120,27 @@ def userMainPage(request):
 
 def processImg(request):
     '''接受上传的图片，并调用接口进行处理'''
-    image = request.FILES['img']
-    # TODO: 判断文件类型是否符合要求
-    img_array = utils.byte2Img(image.file)
+    try:
+        # 通过上传文件的形式来获得图片
+        image = request.FILES['img']
+        pdb.set_trace()
+        # 检查文件类型
+        if 'image' not in image.content_type:
+            # 如果上传的不是图片类型
+            return render(request, 'base.html', {
+                'title' : 'Error',
+                'header' : 'IMP',
+                'title' : 'Upload File Fail',
+                'paras' : [
+                    'Failed to upload file, because the file is not image type. Please try again.'
+                ]
+            })
+    except KeyError:
+        # 通过 url 的方式获取图片
+        url = request.POST['link']
+        resp = requests.get(url)
+        image = io.BytesIO(resp.content)
+    img_array = utils.byte2Img(image)
     # TODO：调用一个图片识别的接口，传入ndarray，返回结果
+
     return HttpResponse('123')
