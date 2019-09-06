@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import ImgProc.views as iv
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', iv.index),
@@ -25,5 +27,12 @@ urlpatterns = [
     path('user/', iv.userMainPage),
     path('logout/', iv.logout),
     path('uploadImg/', iv.processImg),
+    path('userRecord/<page>', iv.userRecord),
+    path('deleteRecord/<id>', iv.deleteRecord),
+    path('userRecord/', iv.userRecord),
+    path('query/', iv.queryPage),
+    path('queryRecords/', iv.queryRecord),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

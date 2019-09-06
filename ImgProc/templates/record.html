@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <meta charset="UTF-8">
+    <title>ImageProcess</title>
+</head>
+<body class="body" style="height:{{ height }}vh; grid-template:'h t m' 5em 'n t m' 9em 's t m' 2em 'c t m' 10em 's1 t m' {{ length }}em 's1 t m' 10em 'p f f' 2em/ 15em 1em 57em">
+    <header>
+        Welcome, {{ username }}!
+    </header>
+    <navigation>
+        <p align="center">
+            <a class="link" href="/index/">Index</a>
+        </p>
+        <p align="center">
+            <a class="link" href="#">Record</a>
+        </p>
+    </navigation>
+    <contact>
+        <p align="center">
+            <a class="link" href="/logout/">Logout</a>
+        </p>
+    </contact>
+
+    <main>
+        <p align="center" class="title">User Record</p>
+        <hr class="line" />
+        <p align="center">
+            <a class="link text_emp" href="/query/">Query</a>
+        </p>
+        {% for record in records %}
+        <div class="block" align="center">
+        <p align="center" class="text text_emp">
+            Record ID
+        </p>
+            <p class="text_emp">
+                {{ record.id }}
+            </p>
+            <p align="center" class="text text_emp">
+                Operation Time
+            </p>
+            <p class="text_emp">
+                {{ record.date }}&nbsp;&nbsp;{{ record.t }}
+            </p>
+        <p class="text text_emp" align="center">
+            Input Image
+        </p>
+        <img src="/static/img/{{ record.src_img }}">
+        <p class="text text_emp" align="center">
+            Output Image
+        </p>
+        <img src="/static/img/{{ record.res_img }}">
+            <p align="center">
+                <a href="/deleteRecord/{{ record.id }}" class="link">Delete</a>
+            </p>
+        </div>
+        {% endfor %}
+    {% if next %}
+    <p align="center">
+            <a href="/userRecord/{{ page }}" class="link">Next</a>
+        </p>
+    {% endif %}
+    </main>
+</body>
+</html>

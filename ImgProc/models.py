@@ -17,3 +17,18 @@ class User(models.Model):
     def __str__(self):
         return '''username = %s 
                     password = %s''' % (self.username, self.password)
+
+
+class Record(models.Model):
+    '''
+    用户上传记录，包含原图片和结果图片
+    ---------------
+    src_img -> 原始图片
+    res_img -> 处理后的结果
+    '''
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    src_img = models.ImageField(upload_to="%Y/%m/%d/%H/%M/%S" + '/src/',null=True)
+    res_img = models.ImageField(upload_to="%Y/%m/%d/%H/%M/%S" + '/res/',null=True)
+    time = models.FloatField(default=0.0)
+    date = models.DateField(auto_now=True)
+    t = models.TimeField(auto_now=True)

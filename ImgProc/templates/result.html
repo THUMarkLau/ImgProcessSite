@@ -15,7 +15,7 @@
             <a class="link" href="/index/">Index</a>
         </p>
         <p align="center">
-            <a class="link" href="#">Record</a>
+            <a class="link" href="/userRecord/0">Record</a>
         </p>
     </navigation>
     <contact>
@@ -27,22 +27,24 @@
     <main>
         <p align="center" class="title">Welcome to IMP!</p>
         <hr class="line" />
-        <div class="block">
+        <div class="block" align="center">
             <p class="text">
                 Process Finish!
             </p>
         </div>
-        <div class="block">
+        <div class="block" align="center">
             <p align="center" class="text_emp">
                 Source Image
             </p>
-
+            {% load staticfiles %}
+            <img src="/static/img/{{ src_img }}">
         </div>
-        <div class="block">
+        <div class="block" align="center">
             <p align="center" class="text_emp">
                 Result Image
             </p>
-
+            {% load staticfiles %}
+            <img src="/static/img/{{ res_img }}">
         </div>
     </main>
 </body>

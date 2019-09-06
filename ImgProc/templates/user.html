@@ -15,7 +15,7 @@
             <a class="link" href="/index/">Index</a>
         </p>
         <p align="center">
-            <a class="link" href="#">Record</a>
+            <a class="link" href="/userRecord/0">Record</a>
         </p>
     </navigation>
     <contact>
@@ -28,7 +28,7 @@
         <p align="center" class="title">Welcome to IMP!</p>
         <hr class="line" />
         <div class="block">
-            <p class="text">
+            <p class="text" align="center">
                 Welcome, {{ username }}! Now you can upload an image to
                 process!
             </p>
@@ -39,10 +39,10 @@
             </p>
             <form  class="container" enctype="multipart/form-data" method="post" action="/uploadImg/" >
                 <p align="center">
-                    <input type="file" name="img" value="Choose an img">
+                    <input type="file" name="img">
                 </p>
                 <p align="center">
-                    <input type="submit" name="submit" value="submit">
+                    <input type="submit" name="submit" value="Submit">
                 </p>
             </form>
         </div>
@@ -55,7 +55,7 @@
                     <input type="url" name="link">
                 </p>
                 <p align="center">
-                    <input type="submit" name="submit">
+                    <input type="submit" name="submit" value="Submit">
                 </p>
             </form>
         </div>
